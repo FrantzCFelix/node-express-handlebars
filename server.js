@@ -20,7 +20,7 @@ app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Import routes and give the server access to them.
-const routes = require('./controllers/catsController.js');
+const routes = require('./controllers/burgerController.js');
 
 app.use(routes);
 
