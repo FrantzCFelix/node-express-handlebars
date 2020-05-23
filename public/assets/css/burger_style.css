@@ -1,0 +1,31 @@
+body {
+  background-image: url(../img/burger_hamburger_black_burger_juicy_116248_2560x1080.jpg1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+}
+
+#notEaten {
+  display: block;
+}
+
+#eaten {
+  display: block;
+}
+
+#boxes {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#column1 {
+  width: 50%;
+}
+
+.devour-burg,
+button {
+  background-color: forestgreen;
+}
