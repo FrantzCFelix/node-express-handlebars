@@ -1,38 +1,59 @@
-<h1>Cats!</h1>
+<h1>It's Burger Time</h1>
+<div class="containter">
+  <div class="row">
+    <div class="col-s12 center-align">
+      <img src="../assets/img/burger_hamburger_black_burger_juicy_116248_2560x1080.jpg" height="500px" width="500px"
+        frameBorder="0">
 
-<h2>Cats that are not sleepy!</h2>
+    </div>
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+  </div>
+</div>
 
-<h2>Cats that are sleepy!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+<div id="burgform">
+  <h2>Add a Burger</h2>
+  <form class="create-form">
 
-<h2>Add a Cat</h2>
-<form class="create-form">
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="name">
+    </div>
 
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
+<div id="boxes">
+  <div id="column1">
+
+    <div id="column2">
+
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+  <div style="width: 100%; display: table;">
+    <div style="display: table-row">
+      <div style="width: 50%; display: table-cell;" id="notEaten">
+        <h2>Burgers that have not been eaten!</h2>
 
-  <button type="submit">Add Cat</button>
-</form>
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div style="display: table-cell;" id="eaten">
+      <h2>Burgers that have been devoured!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
+        {{/each}}
+    </div>
+  </div>
+</div>
